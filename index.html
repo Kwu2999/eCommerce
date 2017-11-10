@@ -1,0 +1,152 @@
+<!doctype> 
+<html>
+    <head>
+        <title>WINSER</title>
+        <style>
+            img {
+                height:150px;
+            }
+            input{
+                width:70px
+            }
+            body{
+                background-color: lightslategray
+            }
+            h1{
+                text-align :center
+            }
+            h0{
+                text-align : center 
+            }
+            h1{
+                color: lightpink
+            }
+            h1{
+                font:70px larable font  
+            }
+            h1{
+                text-decoration: underline;
+            }
+            img{
+                float: right; 
+            }h2{
+                color: lightseagreen
+            }
+            h0{
+                width :160px;
+                height:20px;
+                background: lightgray;
+                position: relative;
+                -webkit-animation: mymove 50s
+            infinite; 
+                -webkit-animation-timing-function: linear;
+            }
+            @-webkit-keyframes mymove {
+                from {left:0px;}
+                to {left:500px;}
+            }
+            @keyframes mymove {
+                from {left:0px;}
+                to {left: 100px;}
+            }
+
+        </style>
+
+        <script>
+            function Purchase() {
+                var qualitity1 = document.getElementById ("qualitity1"); 
+                var qualitity2 = document.getElementById ("qualitity2");
+                var qualitity3 = document.getElementById ("qualitity3");
+                var output = document.getElementById ("output");  
+                
+                var subtotal = parseInt(124* qualitity1.value)+ parseInt (173* qualitity2.value) + parseInt (195*qualitity3.value);
+                var companysubtotal = parseInt (qualitity1.value *124) + parseInt (qualitity2.value * 173) + parseInt (qualitity3.value *195);
+                var profit = subtotal - companysubtotal
+                var totalitems= parseInt(qualitity1) + parseInt(qualitity2)+ parseInt(qualitity3);
+
+                    var tax = subtotal *(8.875)/100
+                    var shipping = " "
+                    if (subtotal <= 100){
+                        shipping = 25 
+                    }else if (subtotal >100 && subtotal <=200){
+                        shipping = 10
+                    }else if (subtotal <200){
+                        shipping = 0
+                    }
+
+                    var itemsold;
+                        itemsold= (qualitity1.value) + (qualitity2.value) + (qualitity3.value);
+                    alert("You're total item is " + itemsold );
+
+                    var total = subtotal + tax + shipping
+                    var build= " "
+                        build += "Subtotal is $ " + subtotal + "\n";
+                        build += "Tax is $  " + tax + "\n"; 
+                        build += "Shipping is $ " + shipping + "\n";
+                        build += "______________________________\n";
+                        build += "Total is $ " + total + "\n";
+                    alert(build)
+
+                    var build3= " "
+                        build3 += "Thanks for shopping at WINSER "
+                    alert(build3)
+
+                    var build2=" "
+                        build2+= "Company Subtotal is $ " + companysubtotal + "\n";
+                        build2+= "Company Profit is $ " + profit + "\n";
+                        build2+= "__________________________\n"
+                    console.log(build2);
+            }
+        </script>
+    
+    </head>
+    <body>
+        <div>
+            <h1>WINSER</h1>
+        </div>
+
+        <div>
+            <h2> Classic Petite </h2>
+            <img src="images\whitewatch.png">
+            <span>Price: $124 </span>
+            <p>
+                Decription: 28MM Classic Petite <br>
+                With fresh white leather strap represent starting a new chapter
+            </p>
+            <input id="qualitity1" type="text">
+        </div> 
+        
+        <div id="output" > </div> 
+
+        <div>
+            <h2> Classic Pattern </h2>
+            <img src="images\englandwatch.png">
+            <span>Price: $173 </span>
+            <p>
+                Decription: 38MM Classic Pattern <br>
+                Inspired by the gorgeous colors of an classic flag, this red, white and blue celebrates timesless preppy American Fashion
+            </p>
+            <input id="qualitity2" type="text">
+        </div> 
+        
+        <div id="output" > </div>
+        
+        <div>
+            <h2> Classic Nature </h2>
+            <img src="images\bluegreenwatch.png">
+            <span>Price: $195 </span>
+            <p>
+                Decription: 40MM Classic Pattern <br>
+                Blue, the color of the sky and the sea blends naturally with green, the beautiful color of nature
+            </p>
+            <input id="qualitity3" type="text">
+        </div> 
+        <br> <button onclick="Purchase();"> Purchase </button> </br>
+        <div id="output" > </div> 
+
+        <div>
+            <br> <h0>CONTACT @THEWINSER.COM</h0></div> </br>
+        </div>
+        
+    </body>
+<html>
